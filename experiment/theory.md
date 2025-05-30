@@ -1,7 +1,8 @@
 ****Theory of Electrochemical Reactor****<br>
 
  An electrochemical reactor is a system designed to carry out chemical reactions using electrical energy. It typically consists of electrodes submerged in an electrolyte, and when an external voltage is applied, oxidation and reduction reactions take place at the anode and cathode, respectively.
-  ---
+
+ ---
 
 ****The performance of an electrochemical reactor depends significantly on the following four parameters:****
 
