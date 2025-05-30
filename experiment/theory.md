@@ -1,6 +1,7 @@
 ****Theory of Electrochemical Reactor****<br>
 
  An electrochemical reactor is a system designed to carry out chemical reactions using electrical energy. It typically consists of electrodes submerged in an electrolyte, and when an external voltage is applied, oxidation and reduction reactions take place at the anode and cathode, respectively.
+  ---
 
 ****The performance of an electrochemical reactor depends significantly on the following four parameters:****
 
@@ -42,7 +43,7 @@ Improves reaction uniformity and allows scaling of the reactor for industrial ap
 
 Optimization goal: Maximize effective electrode surface area to increase reaction rates without exceeding critical current densities.
 
-****3. Electrolyte Concentration****
+****3. Electrolyte Concentration:-****
 
 Definition: The amount of dissolved ionic species in the electrolyte.
 
@@ -60,8 +61,9 @@ Slower reaction rates
 
 
 
-Optimization goal: Maintain adequate concentration to support efficient charge transport and stable reaction kinetics.
-****4. Temperature****
+Optimization goal: Maintain adequate concentration to support efficient charge transport and stable reaction kinetics.<br>
+
+****4. Temperature:-****
 
 Definition: The thermal condition of the electrochemical system.
 
