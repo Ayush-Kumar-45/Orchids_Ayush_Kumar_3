@@ -5,5 +5,5 @@ Step 2:- Adjust Current density, Electrode area, Temperature, Electrolyte concen
 Step 3:- Then click on "Run simulation".<br>
 Step 4:- After that observe results, performance curves and theory.<br>
 Step 5:- Now, you can reset for further simulation.<br>
-experiment/images/Brown Pastel Flowchart Diagram Graph Template.png
-[Electrochemical Reactor Diagram](Brown Pastel Flowchart Diagram Graph Template.png)
+<img src="Brown Pastel Flowchart Diagram Graph Template.png" alt="description" width="400">
+
