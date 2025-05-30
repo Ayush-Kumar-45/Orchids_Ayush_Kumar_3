@@ -1,38 +1,89 @@
-{
+ {
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What happens if the current density in an electrochemical reactor is too high?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "It may cause side reactions like hydrogen or oxygen evolution",
+        "b": "It can lead to excessive heating and electrode corrosion",
+        "c": "It always improves energy efficiency",
+        "d": "It increases the reaction rate"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct. High current density can trigger undesired side reactions.",
+        "b": "Correct. Excessive heating and corrosion are common at high current densities.",
+        "c": "Incorrect. High current density can reduce energy efficiency due to side effects.",
+        "d": "Correct. Reaction rate generally increases with current density."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "abd",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Why is electrode area important in electrochemical reactors?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Larger electrode area provides more active reaction sites",
+        "b": "It allows higher total current without raising current density",
+        "c": "It reduces electrolyte concentration",
+        "d": "It helps in scaling reactors for industrial use"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct. More surface area means more reaction sites.",
+        "b": "Correct. Larger area reduces stress by keeping current density low.",
+        "c": "Incorrect. Electrode area does not directly affect electrolyte concentration.",
+        "d": "Correct. Industrial reactors often require large electrode surfaces."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "abd",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How does electrolyte concentration affect electrochemical reactions?",
+      "answers": {
+        "a": "Higher concentration lowers internal resistance",
+        "b": "It enhances ion mobility",
+        "c": "Low concentration leads to slower reaction rates",
+        "d": "It has no effect on energy consumption"
+      },
+      "explanations": {
+        "a": "Correct. More ions reduce resistance in the electrolyte.",
+        "b": "Correct. Ion mobility improves with concentration.",
+        "c": "Correct. Low ionic concentration slows reactions.",
+        "d": "Incorrect. Poor conductivity increases energy consumption."
+      },
+      "correctAnswer": "abc",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What are the effects of temperature on an electrochemical reactor?",
+      "answers": {
+        "a": "Higher temperature increases ionic mobility and reaction rates",
+        "b": "Excessive temperature may damage electrodes and electrolyte",
+        "c": "Temperature does not influence electrical conductivity",
+        "d": "Optimal temperature control improves reactor efficiency"
+      },
+      "explanations": {
+        "a": "Correct. Heat generally enhances kinetics and mobility.",
+        "b": "Correct. Too much heat can degrade components.",
+        "c": "Incorrect. Temperature strongly affects conductivity.",
+        "d": "Correct. Maintaining proper temperature is essential."
+      },
+      "correctAnswer": "abd",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following describes the interrelationship among electrochemical reactor parameters?",
+      "answers": {
+        "a": "Current density depends on total current and electrode area",
+        "b": "Electrolyte concentration and temperature affect conductivity and reaction kinetics",
+        "c": "Temperature only affects electrode stability, not electrolyte behavior",
+        "d": "Balancing all parameters is necessary for optimal performance"
+      },
+      "explanations": {
+        "a": "Correct. Current density is calculated as current divided by electrode area.",
+        "b": "Correct. Both factors influence charge transport and reaction speed.",
+        "c": "Incorrect. Temperature affects both electrodes and electrolyte properties.",
+        "d": "Correct. Parameters are interdependent and must be balanced."
+      },
+      "correctAnswer": "abd",
       "difficulty": "beginner"
     }
   ]
