@@ -1,1 +1,1 @@
-### This directory contains flowchart used in [storyboard document](https://github.com/virtual-labs/ph3-exp-dev-process/blob/main/storyboard/README.org).
+![Alt text] (https://github.com/Ayush-Kumar-45/Orchids_Ayush_Kumar_3/blob/main/experiment/images/Brown%20Pastel%20Flowchart%20Diagram%20Graph%20Template.png)
