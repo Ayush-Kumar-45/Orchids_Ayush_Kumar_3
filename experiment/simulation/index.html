@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrochemical Reactor Virtual Lab</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Electrochemical Reactor Virtual Lab</h1>
+            <p class="subtitle">Interactive simulation of electrochemical systems</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="lab-container">
+            <div class="control-panel">
+                <h2 class="section-title">⚙️ Reactor Configuration</h2>
+                
+                <div class="form-group">
+                    <label for="reactorType">Reactor Type:</label>
+                    <select id="reactorType">
+                        <option value="Electrolysis">Electrolysis</option>
+                        <option value="Fuel Cell">Fuel Cell</option>
+                        <option value="Battery">Battery</option>
+                    </select>
+                </div>
+                
+                <div class="reactor-3d-container">
+                    <div class="reactor-3d" id="reactor3d">
+                        </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentDensity">
+                        Current Density (A/cm²)
+                        <span class="tooltip">?
+                            <span class="tooltiptext">The current per unit area of the electrode surface</span>
+                        </span>
+                    </label>
+                    <input type="range" id="currentDensity" min="0.1" max="2.0" step="0.1" value="0.5">
+                    <span id="currentDensityValue" class="range-value">0.5</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="electrodeArea">
+                        Electrode Area (cm²)
+                        <span class="tooltip">?
+                            <span class="tooltiptext">The surface area of the electrode</span>
+                        </span>
+                    </label>
+                    <input type="range" id="electrodeArea" min="10" max="100" step="5" value="50">
+                    <span id="electrodeAreaValue" class="range-value">50</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="temperature">
+                        Temperature (°C)
+                        <span class="tooltip">?
+                            <span class="tooltiptext">Operating temperature of the reactor</span>
+                        </span>
+                    </label>
+                    <input type="range" id="temperature" min="25" max="100" step="5" value="60">
+                    <span id="temperatureValue" class="range-value">60</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="concentration">
+                        Electrolyte Concentration (mol/L)
+                        <span class="tooltip">?
+                            <span class="tooltiptext">Concentration of the electrolyte solution</span>
+                        </span>
+                    </label>
+                    <input type="range" id="concentration" min="0.1" max="2.0" step="0.1" value="1.0">
+                    <span id="concentrationValue" class="range-value">1.0</span>
+                </div>
+                
+                <div class="btn-group">
+                    <button id="simulateBtn" class="btn pulse">Run Simulation</button>
+                    <button id="resetBtn" class="btn btn-reset">Reset</button>
+                </div>
+                <div class="spinner" id="spinner"></div>
+            </div>
+            
+            <div class="visualization">
+                <div class="tabs">
+                    <div class="tab active" data-tab="results">Results</div>
+                    <div class="tab" data-tab="graph">Performance Curves</div>
+                    <div class="tab" data-tab="theory">Theory</div>
+                </div>
+                
+                <div id="results" class="tab-content active">
+                    <h2 class="section-title">🔬 Simulation Results</h2>
+                    <div class="results-card">
+                        <div class="results-grid">
+                            <div class="result-item" id="itemVoltage">
+                                <span class="result-icon">⚡</span> <span class="result-label">Operating Voltage</span>
+                                <span id="resultVoltage" class="result-value">1.48</span>
+                                <span class="result-unit">V</span>
+                            </div>
+                            <div class="result-item" id="itemEfficiency">
+                                <span class="result-icon">📊</span> <span class="result-label">Voltage Efficiency</span>
+                                <span id="resultEfficiency" class="result-value">83.11</span>
+                                <span class="result-unit">%</span>
+                            </div>
+                            <div class="result-item" id="itemCurrent">
+                                <span class="result-icon">🌊</span> <span class="result-label">Current</span>
+                                <span id="resultCurrent" class="result-value">25.00</span>
+                                <span class="result-unit">A</span>
+                            </div>
+                            <div class="result-item" id="itemPower">
+                                <span class="result-icon">💪</span> <span class="result-label">Power</span>
+                                <span id="resultPower" class="result-value">37.00</span>
+                                <span class="result-unit">W</span>
+                            </div>
+                        </div>
+                        <div class="system-status-box status-ready" id="systemStatus">
+                            <span class="status-icon">💡</span>
+                            <span id="statusMessage">Ready for simulation. Adjust parameters and click 'Run Simulation'.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="equations">
+                        <h3>Key Equations:</h3>
+                        <p id="equationsText">
+                            For Electrolysis: V = V<sub>ideal</sub> + η<sub>ohmic</sub> + η<sub>conc</sub><br>
+                            Efficiency = V<sub>ideal</sub> / V<sub>cell</sub> × 100%
+                        </p>
+                    </div>
+                </div>
+                
+                <div id="graph" class="tab-content">
+                    <h2 class="section-title">📈 Performance Curves</h2>
+                    <div class="tabs">
+                        <div class="tab active" data-subtab="polarization">Polarization</div>
+                        <div class="tab" data-subtab="efficiency">Efficiency</div>
+                        <div class="tab" data-subtab="power">Power</div>
+                    </div>
+                    
+                    <div id="polarization" class="subtab-content active">
+                        <div class="chart-container">
+                            <canvas id="polarizationChart"></canvas>
+                        </div>
+                        <div class="form-group">
+                            <label for="curvePoints">Number of Data Points:</label>
+                            <input type="range" id="curvePoints" min="5" max="30" step="1" value="20">
+                            <span id="curvePointsValue" class="range-value">20</span>
+                        </div>
+                    </div>
+                    
+                    <div id="efficiency" class="subtab-content">
+                        <div class="chart-container">
+                            <canvas id="efficiencyChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div id="power" class="subtab-content">
+                        <div class="chart-container">
+                            <canvas id="powerChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="theory" class="tab-content">
+                    <h2 class="section-title">📚 Theoretical Background</h2>
+                    <div id="theoryContent">
+                        <h3>Electrolysis</h3>
+                        <p>Electrolysis is the process of using electrical energy to drive a non-spontaneous chemical reaction. In water electrolysis, electrical energy splits water into hydrogen and oxygen gases. The theoretical minimum voltage required for water electrolysis is 1.23 V at standard conditions.</p>
+                        
+                        <h3>Fuel Cell</h3>
+                        <p>A fuel cell converts the chemical energy from a fuel into electricity through a chemical reaction with oxygen or another oxidizing agent. Fuel cells are characterized by their high efficiency and low emissions. The theoretical maximum voltage for a hydrogen fuel cell is 1.23 V at standard conditions.</p>
+                        
+                        <h3>Battery</h3>
+                        <p>A battery is a device consisting of one or more electrochemical cells with external connections for powering electrical devices. Batteries store chemical energy and convert it to electrical energy through redox reactions. The voltage of a battery cell depends on the chemistry, with lithium-ion batteries typically around 3.7 V nominal.</p>
+                        
+                        <h3>Key Concepts</h3>
+                        <ul>
+                            <li><strong>Current Density:</strong> The electric current per unit area of electrode surface (A/cm²)</li>
+                            <li><strong>Overpotential:</strong> The difference between the actual potential and the theoretical potential needed for a reaction</li>
+                            <li><strong>Ohmic Loss:</strong> Voltage loss due to resistance in the electrolyte and electrodes</li>
+                            <li><strong>Activation Loss:</strong> Voltage loss due to the energy needed to initiate electrochemical reactions</li>
+                            <li><strong>Concentration Loss:</strong> Voltage loss due to mass transport limitations of reactants</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
