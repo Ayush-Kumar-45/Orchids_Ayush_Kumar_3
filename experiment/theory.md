@@ -92,7 +92,7 @@ Optimization goal: Control temperature within an optimal range to enhance effici
 
 ---
 
-****Interrelationship of Parameters****
+****~Interrelationship of Parameters****
 
 These four parameters are interdependent and must be carefully balanced:
 
@@ -101,6 +101,8 @@ Current density is influenced by both total current and electrode area.
 Electrolyte concentration and temperature affect the electrical conductivity and reaction kinetics, which in turn impact allowable current density.
 
 Operating temperature impacts both electrode stability and electrolyte behavior.<br>
+
+---
 
 
 <img src="https://github.com/Ayush-Kumar-45/Orchids_Ayush_Kumar_3/blob/main/experiment/images/electrochemical.png" height="600 px">
