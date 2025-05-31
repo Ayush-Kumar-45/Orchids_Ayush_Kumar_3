@@ -4,7 +4,7 @@
 
  ---
 
-****The performance of an electrochemical reactor depends significantly on the following four parameters:****
+****~The performance of an electrochemical reactor depends significantly on the following four parameters:****
 
 ****1. Current Density (A/m²):-****
 
